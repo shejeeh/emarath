@@ -582,12 +582,39 @@ h4 {
     }
 }
 
-@media (max-width: 600px) {
+/* Mobile Horizontal Scroll Gallery */
+@media (max-width: 768px) {
     .gallery-mosaic {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 300px;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        /* Space for shadow/interaction */
+
+        /* Hide Scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
+    .gallery-mosaic::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-item {
+        flex: 0 0 90%;
+        /* Shows one large image clearly */
+        width: 90%;
+        height: 320px;
+        /* Fixed height 300-340px range */
+        scroll-snap-align: center;
+
+        /* Reset Grid Spans */
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    /* Reset specific item sizes to uniform slider card */
     .gallery-item.large,
     .gallery-item.tall,
     .gallery-item.wide {
