@@ -1,0 +1,180 @@
+/* --- CLIENT REVIEWS SECTION (Infinite Scroll) --- */
+.reviews-section {
+    background-color: #1A1A1D;
+    /* Deep charcoal grey */
+    padding: 8rem 0;
+    /* Large top/bottom padding */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    /* Ensure no horizontal scrollbars on page */
+}
+
+/* Header Styles */
+.reviews-header {
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.reviews-label {
+    color: #C6A75E;
+    /* Muted Gold */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.reviews-title {
+    font-family: var(--font-heading);
+    /* Serif */
+    font-size: 3.5rem;
+    color: #C6A75E;
+    /* Muted Gold */
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Infinite Scroll Container */
+.reviews-window {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0 2rem;
+    /* Buffer for shadow */
+    /* Masking for fade effect on edges (optional but luxurious) */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.reviews-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    /* Allow track to be as wide as needed */
+    animation: scroll-loop 40s linear infinite;
+    /* Slow movement */
+}
+
+/* Pause on Hover */
+.reviews-window:hover .reviews-track {
+    animation-play-state: paused;
+}
+
+/* Keyframes for smooth infinite loop */
+/* We move -50% because the track contains 2 sets of identical items */
+@keyframes scroll-loop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Card Styles */
+.review-card {
+    background-color: #202020;
+    /* Slightly lighter than section */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Fixed Layout Dimensions */
+    width: 380px;
+    /* Fixed width for consistency */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    min-height: 280px;
+
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+    /* Prevent text selection while dragging/scrolling */
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    background-color: #252525;
+}
+
+.review-text {
+    color: #E5E5E5;
+    /* Soft light grey */
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-family: var(--font-body);
+    /* clamp text */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.reviewer-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    /* Very subtle divider */
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewer-name {
+    color: #C6A75E;
+    /* Muted Gold */
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.star-rating i {
+    color: #C6A75E;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .reviews-section {
+        padding: 5rem 0;
+    }
+
+    .reviews-title {
+        font-size: 2.5rem;
+    }
+
+    .reviews-window {
+        /* Reduce mask intensity on mobile for more visibility */
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+    }
+
+    .review-card {
+        width: 300px;
+        /* Smaller width for mobile */
+        padding: 2rem 1.5rem;
+        min-height: 250px;
+    }
+
+    .review-text {
+        font-size: 0.95rem;
+    }
+
+    /* Keep animation running, maybe slightly faster on mobile? Or kept slow as requested */
+}

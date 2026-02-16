@@ -368,7 +368,8 @@ h4 {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     font-family: var(--font-heading);
-    /* Or a unique display font if requested */
+    max-width: 300px;
+    /* Limit width to avoid overlap */
 }
 
 .promo-text-content p {
@@ -391,18 +392,21 @@ h4 {
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0px;
-    width: 60%;
+    bottom: 0;
+    width: 50%;
+    /* Or 50% if the image is too wide */
     height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    /* display: flex; align-items: flex-end; justify-content: flex-end; REMOVED FLEX to let object-fit work */
+    overflow: hidden;
+    /* Ensure no spill */
 }
 
 .promo-image-content img {
-    width: auto;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
+    /* Center the image content */
 }
 
 /* Lifestyle Card */
@@ -473,6 +477,25 @@ h4 {
 }
 
 /* Product Grid */
+/* Section Header */
+.section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    /* Match collection intro spacing */
+}
+
+.section-header h2 {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-family: var(--font-body);
+    /* Matching collection subtitle font */
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
 /* --- NEW GALLERY MOSAIC STYLES --- */
 .gallery-section {
     padding-top: 2rem;
