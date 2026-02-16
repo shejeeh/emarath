@@ -16,24 +16,16 @@
 
 <body>
 
-    <!-- Top Header Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="contact-mini">
-                <span><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</span>
-                <span><i class="fas fa-envelope"></i> hello@emarath.com</span>
-            </div>
-            <div class="account-icons">
-                <a href="#"><i class="fas fa-user"></i> Account</a>
-                <a href="#"><i class="fas fa-shopping-bag"></i> Cart (0)</a>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Main Navbar -->
     <nav class="navbar main-nav">
         <div class="container nav-container">
-            <a href="#" class="logo">EMARATH</a>
+            <!-- Navbar Logo -->
+            <a href="#" class="logo">
+                <img src="assets/logo_main.jpg" alt="EMARATH">
+                <span>EMARATH</span>
+            </a>
             <ul class="nav-links centered-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
@@ -42,10 +34,8 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                </div>
-                <a href="#contact" class="btn-nav box-btn">Book Consultation</a>
+
+
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -86,6 +76,35 @@
                             <img src="./assets/IMG_1199.PNG" alt="Lounge Chair">
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Mobile Slider (Visible only on <768px) -->
+            <div class="mobile-collection-slider">
+                <!-- Card 1 -->
+                <div class="card-product">
+                    <img src="./assets/IMG_1197.PNG" alt="Table Lamp">
+                </div>
+                <!-- Card 2 -->
+                <div class="card-product">
+                    <img src="./assets/IMG_1199.PNG" alt="Lounge Chair">
+                </div>
+                <!-- Promo Card -->
+                <div class="promo-wide-card">
+                    <div class="promo-text-content">
+                        <h3>Courk<br>Stars xNegitos,<br>Teat Time!</h3>
+                        <p>Discover our range of soft furnishings.</p>
+                        <div class="promo-brand">
+                            <i class="fas fa-certificate"></i> Premium
+                        </div>
+                    </div>
+                    <div class="promo-image-content">
+                        <img src="./assets/IMG_1222.PNG" alt="Cushions">
+                    </div>
+                </div>
+                <!-- Lifestyle Card -->
+                <div class="lifestyle-card">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132016%20(1).jpg.jpeg" alt="Interior Lifestyle">
                 </div>
             </div>
 
@@ -233,7 +252,10 @@
                 <div class="brand-block">
                     <!-- Icon placeholder matching theme -->
                     <!-- <i class="fas fa-couch footer-icon-logo"></i> -->
-                    <h2 class="footer-logo-text">EMARATH</h2>
+                    <div class="footer-brand-lockup">
+                        <img src="assets/logo_main.jpg" alt="EMARATH" class="footer-logo">
+                        <span class="footer-logo-text">EMARATH</span>
+                    </div>
                     <p class="footer-tagline">Timeless furniture for modern living. Designed with intention, crafted
                         with care, and built to last generations.</p>
                 </div>
