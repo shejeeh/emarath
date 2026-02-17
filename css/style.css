@@ -134,12 +134,18 @@ h4 {
 
 /* Main Navbar */
 .navbar {
-    background: var(--bg-color);
+    background: transparent;
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: var(--bg-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    padding: 0.8rem 0;
 }
 
 .nav-container {
@@ -160,12 +166,45 @@ h4 {
     margin-right: 12px;
 }
 
-.logo span {
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Left align */
+    line-height: 1.1;
+}
+
+.logo .brand-name {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-main);
+    color: #fff;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo .tagline {
+    font-family: var(--font-body);
+    /* Sans-serif */
+    font-size: 1rem;
+    /* Smaller font */
+    font-weight: 300;
+    /* Light */
+    color: #ccc;
+    /* Soft light grey */
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .logo .brand-name {
+    color: var(--text-main);
+}
+
+.navbar.scrolled .logo .tagline {
+    color: #888;
+    /* Darker for light bg */
 }
 
 .centered-links {
@@ -178,6 +217,11 @@ h4 {
     font-size: 0.85rem;
     letter-spacing: 1px;
     font-weight: 500;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .centered-links a {
     color: var(--text-main);
 }
 
@@ -192,11 +236,18 @@ h4 {
 }
 
 .box-btn {
-    border: 1px solid var(--text-main);
+    border: 1px solid #fff;
     padding: 0.5rem 1.2rem;
     border-radius: 4px;
     font-size: 0.8rem;
     text-transform: uppercase;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .box-btn {
+    border-color: var(--text-main);
+    color: var(--text-main);
 }
 
 .box-btn:hover {
@@ -213,13 +264,35 @@ h4 {
     display: none;
     cursor: pointer;
     font-size: 1.2rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .mobile-menu-btn {
+    color: var(--text-main);
 }
 
 /* Hero Section */
+/* Hero Background Block */
+.hero-bg-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+    background: #08101A;
+    /* Subtle gradient fade at bottom to blend with white */
+    background: linear-gradient(to bottom, #08101A 80%, rgba(8, 16, 26, 0) 100%);
+    z-index: -1;
+}
+
 .hero-clean {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    /* Give space for transparent nav if needed, or stick close */
     padding: 0 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-clean img.hero-img {
@@ -1083,16 +1156,84 @@ h4 {
 }
 
 @media (max-width: 768px) {
+
+    /* Adjust Container Padding for Mobile */
+    .container {
+        padding: 0 1.25rem;
+        /* ~20px consistent side padding */
+    }
+
     .about-minimal-section {
-        padding: 6rem 0;
+        padding: 4rem 0;
     }
 
     .about-minimal-content h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    /* Mobile Grid Layout for Thumbnails */
+    .about-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        /* Uniform gap */
+        width: 100%;
+        margin-top: 2rem;
+        padding: 0;
+        /* Remove any flexible flex padding */
     }
 
     .about-thumbnails img {
-        height: 150px;
-        width: 150px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        /* Square 1:1 ratio */
+        object-fit: cover;
+        border-radius: 4px;
+        /* Consistent rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        /* Soft shadow */
+        margin: 0;
+        /* Remove extra margins */
+    }
+
+    /* Hide 3rd image on mobile for 2-column grid */
+    .about-thumbnails img:nth-child(3) {
+        display: none;
+    }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+@media screen and (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
     }
 }
