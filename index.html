@@ -32,6 +32,7 @@
                 <li><a href="#collection">Collection</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Review</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
@@ -74,21 +75,51 @@
                             <img src="./assets/Ideas%202%202-未命名-20250825-132049.jpg.jpeg" alt="Collection Item 1">
                         </div>
                         <div class="card-product">
-                            <img src="./assets/Ideas%202%202-未命名-20250825-132035.jpg.jpeg" alt="Collection Item 2">
+                            <img src="assets/IMG_1199.PNG" alt="Collection Item 2">
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Mobile Slider (Visible only on <768px) -->
-            <div class="mobile-collection-slider">
+            <div class="mobile-collection-slider" id="mobile-collection-slider">
+                <!-- ORIGINAL SET -->
                 <!-- Card 1 -->
                 <div class="card-product">
                     <img src="./assets/Ideas%202%202-未命名-20250825-132049.jpg.jpeg" alt="Collection Item 1">
                 </div>
                 <!-- Card 2 -->
                 <div class="card-product">
-                    <img src="./assets/Ideas%202%202-未命名-20250825-132035.jpg.jpeg" alt="Collection Item 2">
+                    <img src="assets/IMG_1199.PNG" alt="Collection Item 2">
+                </div>
+                <!-- Promo Card -->
+                <div class="promo-wide-card">
+                    <div class="promo-text-content">
+                        <h3>Modern Living,<br>Refined Comfort</h3>
+                        <p>Discover thoughtfully designed interiors and furnishings that bring balance, warmth, and
+                            understated elegance into your everyday spaces.</p>
+                        <div class="promo-brand">
+                            <i class="fas fa-certificate"></i> CURATED EDIT
+                        </div>
+                    </div>
+                    <div class="promo-image-content">
+                        <img src="./assets/anu%20chandra%20binu-Unnamed-20251002-114839.jpg.jpeg"
+                            alt="Modern Architecture">
+                    </div>
+                </div>
+                <!-- Lifestyle Card -->
+                <div class="lifestyle-card">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132022.jpg.jpeg" alt="Interior Lifestyle">
+                </div>
+
+                <!-- DUPLICATE SET (For Infinite Loop) -->
+                <!-- Card 1 -->
+                <div class="card-product">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132049.jpg.jpeg" alt="Collection Item 1">
+                </div>
+                <!-- Card 2 -->
+                <div class="card-product">
+                    <img src="assets/IMG_1199.PNG" alt="Collection Item 2">
                 </div>
                 <!-- Promo Card -->
                 <div class="promo-wide-card">
@@ -153,29 +184,36 @@
                 <h2>GALLERY</h2>
             </div>
 
+            <div class="gallery-mobile-header">
+                <h3>Refined Living</h3>
+                <p>Spaces thoughtfully designed to balance elegance and comfort. Each project reflects a commitment to
+                    quality materials, refined details, and timeless aesthetics that elevate everyday living.</p>
+            </div>
+
             <div class="gallery-mosaic">
-                <!-- Large Feature -->
-                <div class="gallery-item large">
-                    <img src="./assets/anu%20chandra%20binu-Unnamed-20251002-114907.jpg.jpeg" alt="Modern Architecture">
-
-                </div>
-
-                <!-- Tall Item -->
+                <!-- Tall Item (Text on Left) -->
                 <div class="gallery-item tall" style="box-shadow: none; background: transparent;">
                     <div class="gallery-text-content"
                         style="padding: 1rem; height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: left;">
                         <h3
                             style="color: #C6A75E; font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1.5rem;">
                             Refined Living</h3>
-                        <p style="color: #E5E5E5; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">Spaces
-                            designed to inspire and comfort. This area is reserved for your custom text content
-                            describing the philosophy behind our designs.</p>
+                        <p style="color: #444444; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">Spaces
+                            thoughtfully designed to balance elegance and comfort. Each project reflects a commitment to
+                            quality materials, refined details, and timeless aesthetics that elevate everyday living.
+                        </p>
                     </div>
+                </div>
+
+                <!-- Large Feature (Image on Right) -->
+                <div class="gallery-item large">
+                    <img src="./assets/anu%20chandra%20binu-Unnamed-20251002-114907.jpg.jpeg" alt="Modern Architecture">
+
                 </div>
 
                 <!-- Standard Items -->
                 <div class="gallery-item">
-                    <img src="./assets/Ideas%202%202-未命名-20250825-132041.jpg.jpeg" alt="Interior Design">
+                    <img src="assets/IMG_1210.PNG" alt="Interior Design">
 
                 </div>
 
@@ -198,6 +236,49 @@
                 <div class="gallery-item">
                     <img src="./assets/Ideas%202%202-未命名-20250825-132041.jpg.jpeg" alt="Office">
 
+                </div>
+            </div>
+
+            <!-- Mobile Gallery Slider (Infinite Loop) -->
+            <div class="gallery-mobile-slider" id="gallery-mobile-slider">
+                <!-- Set 1 -->
+                <div class="gallery-item">
+                    <img src="./assets/anu%20chandra%20binu-Unnamed-20251002-114907.jpg.jpeg" alt="Modern Architecture">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/IMG_1210.PNG" alt="Interior Design">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132055.jpg.jpeg" alt="Elegant Room">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132057.jpg.jpeg" alt="Architectural Detail">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132047.jpg.jpeg" alt="Wide Interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132041.jpg.jpeg" alt="Office">
+                </div>
+
+                <!-- Set 2 (Duplicate) -->
+                <div class="gallery-item">
+                    <img src="./assets/anu%20chandra%20binu-Unnamed-20251002-114907.jpg.jpeg" alt="Modern Architecture">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/IMG_1210.PNG" alt="Interior Design">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132055.jpg.jpeg" alt="Elegant Room">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132057.jpg.jpeg" alt="Architectural Detail">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132047.jpg.jpeg" alt="Wide Interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Ideas%202%202-未命名-20250825-132041.jpg.jpeg" alt="Office">
                 </div>
             </div>
         </div>
@@ -405,9 +486,9 @@
                 <div class="link-group">
                     <h4>EXPLORE</h4>
                     <a href="#collection">COLLECTION</a>
-                    <a href="#gallery">CRAFTSMANSHIP</a>
+                    <a href="#gallery">GALLERY</a>
                     <a href="#about">ABOUT</a>
-                    <a href="#contact">VISIT</a>
+                    <a href="#reviews">REVIEW</a>
                 </div>
                 <div class="link-group">
                     <h4>CONNECT</h4>

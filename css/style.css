@@ -29,6 +29,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -60,6 +64,8 @@ h4 {
     /* Increased for wider layout */
     margin: 0 auto;
     padding: 0 2rem;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .section {
@@ -502,6 +508,11 @@ h4 {
     padding-bottom: 6rem;
 }
 
+.gallery-mobile-header {
+    display: none;
+    /* Hidden on Desktop */
+}
+
 .gallery-mosaic {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -617,44 +628,79 @@ h4 {
     }
 }
 
-/* Mobile Horizontal Scroll Gallery */
+/* Mobile Gallery Slider */
+.gallery-mobile-slider {
+    display: none;
+}
+
 @media (max-width: 768px) {
+
+    /* Hide the desktop mosaic grid */
     .gallery-mosaic {
+        display: none !important;
+    }
+
+    /* Make the mobile header visible again */
+    .gallery-mobile-header {
+        display: block !important;
+        padding-bottom: 20px;
+        padding-left: 5px;
+    }
+
+    .gallery-mobile-header h3 {
+        color: #C6A75E;
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .gallery-mobile-header p {
+        color: #444444;
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 300;
+        max-width: 95%;
+    }
+
+    /* Enable the slider */
+    .gallery-mobile-slider {
         display: flex;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1rem;
-        padding-bottom: 1.5rem;
-        /* Space for shadow/interaction */
+        overflow-y: hidden;
+        width: 100%;
+        max-width: 100%;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
 
         /* Hide Scrollbar */
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
-    .gallery-mosaic::-webkit-scrollbar {
+    .gallery-mobile-slider::-webkit-scrollbar {
         display: none;
     }
 
-    .gallery-item {
-        flex: 0 0 90%;
-        /* Shows one large image clearly */
-        width: 90%;
-        height: 320px;
-        /* Fixed height 300-340px range */
-        scroll-snap-align: center;
-
-        /* Reset Grid Spans */
-        grid-column: auto !important;
-        grid-row: auto !important;
+    .gallery-mobile-slider .gallery-item {
+        flex: 0 0 85%;
+        max-width: 85%;
+        height: 350px;
+        /* Consistent height */
+        border-radius: 12px;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+        margin-left: 0;
     }
 
-    /* Reset specific item sizes to uniform slider card */
-    .gallery-item.large,
-    .gallery-item.tall,
-    .gallery-item.wide {
-        grid-column: auto;
-        grid-row: auto;
+    .gallery-mobile-slider .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -837,10 +883,20 @@ h4 {
     .mobile-collection-slider {
         display: flex;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        overflow-y: hidden;
+        /* Prevent vertical scroll if any */
+        width: 100%;
+        /* Ensure it fits container */
+        max-width: 100%;
+        /* scroll-snap-type: x mandatory; REMOVED for smooth auto slide */
         gap: 1rem;
         padding-bottom: 2rem;
         margin-top: 1rem;
+        padding-left: 0;
+        /* Reset */
+        padding-right: 0;
+        box-sizing: border-box;
+        /* Ensure padding doesn't push width */
 
         -ms-overflow-style: none;
         /* Hide scrollbar IE/Edge */
@@ -856,7 +912,7 @@ h4 {
         flex: 0 0 90%;
         width: 90%;
         height: 340px;
-        scroll-snap-align: center;
+        /* scroll-snap-align: center; REMOVED */
         border-radius: var(--border-radius);
         overflow: hidden;
         box-shadow: var(--shadow-soft);
