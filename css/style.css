@@ -486,6 +486,11 @@ h4 {
     object-fit: cover;
     object-position: center;
     /* Center the image content */
+    transition: transform 0.5s ease;
+}
+
+.promo-wide-card:hover .promo-image-content img {
+    transform: scale(1.05);
 }
 
 /* Lifestyle Card */
@@ -500,6 +505,11 @@ h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.lifestyle-card:hover img {
+    transform: scale(1.05);
 }
 
 
