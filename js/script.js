@@ -20,7 +20,7 @@ mobileMenuBtn.addEventListener('click', () => {
         navLinks.style.top = '100%';
         navLinks.style.left = '0';
         navLinks.style.width = '100%';
-        navLinks.style.backgroundColor = '#fff';
+        navLinks.style.backgroundColor = '#1C1E29';
         navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
         navLinks.style.padding = '1rem 0';
 
